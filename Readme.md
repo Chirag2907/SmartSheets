@@ -170,3 +170,13 @@ nodemon index.js
 #### Socket.io
 
 The backend uses **Socket.io** to establish a real-time connection with the frontend. The server listens for events such as `connection`, `join`, `leave`, and `update`. The server emits events such as `update` and `disconnect`.
+
+#### Screenshots
+
+![WhatsApp Image 2024-09-01 at 22 34 39](https://github.com/user-attachments/assets/6bb1ab58-473f-4e9f-93c7-f0af9c20cdec)
+
+![WhatsApp Image 2024-09-01 at 21 21 27 (1)](https://github.com/user-attachments/assets/b054fab1-86f1-47c9-bbdc-1aecd746ea5f)
+
+![WhatsApp Image 2024-09-01 at 21 21 27](https://github.com/user-attachments/assets/c61468e3-0372-458b-be08-1dd02ea0ccc0)
+
+
