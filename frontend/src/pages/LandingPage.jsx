@@ -9,8 +9,8 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userDetails, setUserDetails] = useState(null);
-  const [ownedSheets, setOwnedSheets] = useState([]);
-  const [collaboratedSheets, setCollaboratedSheets] = useState([]);
+  const [ownedSheets, setOwnedSheets] = useState([]);  // Initialized as an empty array
+  const [collaboratedSheets, setCollaboratedSheets] = useState([]);  // Initialized as an empty array
 
   const capitalizeFirstLetter = (string) => {
     if (!string) return '';
@@ -20,7 +20,7 @@ const LandingPage = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('https://smartsheets.onreader.com/user/me', {
+      fetch('https://smartsheets.onrender.com/user/me', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -36,7 +36,7 @@ const LandingPage = () => {
         });
     }
 
-    fetch('https://smartsheets.onreader.com/sheet/owned', {
+    fetch('https://smartsheets.onrender.com/sheet/owned', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -44,13 +44,19 @@ const LandingPage = () => {
     })
       .then(response => response.json())
       .then(data => {
-        setOwnedSheets(data);
+        if (Array.isArray(data)) {
+          setOwnedSheets(data);
+        } else {
+          console.error('Owned sheets data is not an array:', data);
+          setOwnedSheets([]);
+        }
       })
       .catch(error => {
         console.error('Error fetching owned sheets:', error);
+        setOwnedSheets([]); // Set as empty array in case of error
       });
 
-    fetch('https://smartsheets.onreader.com/sheet/collaborated', {
+    fetch('https://smartsheets.onrender.com/sheet/collaborated', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -58,10 +64,16 @@ const LandingPage = () => {
     })
       .then(response => response.json())
       .then(data => {
-        setCollaboratedSheets(data);
+        if (Array.isArray(data)) {
+          setCollaboratedSheets(data);
+        } else {
+          console.error('Collaborated sheets data is not an array:', data);
+          setCollaboratedSheets([]);
+        }
       })
       .catch(error => {
         console.error('Error fetching collaborated sheets:', error);
+        setCollaboratedSheets([]); // Set as empty array in case of error
       });
   }, []);
 
