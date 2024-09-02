@@ -177,6 +177,8 @@ The backend uses **Socket.io** to establish a real-time connection with the fron
 
 ![WhatsApp Image 2024-09-01 at 21 21 27 (1)](https://github.com/user-attachments/assets/b054fab1-86f1-47c9-bbdc-1aecd746ea5f)
 
-![WhatsApp Image 2024-09-01 at 21 21 27](https://github.com/user-attachments/assets/c61468e3-0372-458b-be08-1dd02ea0ccc0)
+![WhatsApp Image 2024-09-01 at 21 21 29](https://github.com/user-attachments/assets/7bdbec58-4aa8-4e14-b0ae-0f61466d05e0)
+
+![WhatsApp Image 2024-09-01 at 22 26 14](https://github.com/user-attachments/assets/f1614b4d-943b-4e24-8a9d-c84c1af966df)
 
 
